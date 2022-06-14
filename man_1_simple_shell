@@ -1,0 +1,45 @@
+.TH simple_shell "1.0" "12th June 2022" "simple_shell man page" "simple_shell man page"
+.SH NAME
+.B shell
+- a standard command interpreter similar to the GNU Bourne-Again SHell (sh).
+.SH SYNOPSIS
+#include "holberton.h"
+.PP
+.shell
+.PP
+shell [option_name] [argument ...]
+.SH DESCRIPTION
+shell is a command programming language that executes commands read from a terminal or a file. It is the program that is running when a user logs into the system.
+.SH INVOCATION
+If no arguments are present and if the standard input of the shell is connected to a terminal, the shell is considered an interactive shell.
+.PP
+If the standard input is used with a pipeline operator, |, to connect the command, such as echo "qwerty" | ./shell, then the shell is in non-interactive mode.
+.SH LEXICAL STRUCTURE
+The shell reads input in terms of lines from a file and breaks it up into words at whitespace (blanks and tabs).
+.SH RETURN
+Upon successful return, the shell will always return a 0 for success. If the shell program fails when a command is entered incorrectly or does not exist in the $PATH, then shell program will exit out of the child process and display an error message corresponding to the error the user committed and return with a prompt.
+.SH BUILT-INS
+.PP
+env - When entered, shell prints the current environment to standard output.
+.PP
+exit - When entered, shell exits out of the shell program.
+
+.SH FILES
+.I
+.sp
+$HOME/.profile
+.I
+.sp
+/etc/profile
+.I
+.sp
+/etc/shells
+.SH ALSO SEE
+.PP
+man sh, execve(2), environ
+.SH NOTES
+All files and code used in .shell were created and compiled on Ubuntu 14.04.4 LTS using GCC 4.8.4
+.SH BUGS
+There are many features and builtin commands that are not implimented in this simple shell such as aliases, cd, and logical operators. When 
+.SH AUTHOR
+Nwabueze_Franklin et Atansieye_Ifeoluwa
